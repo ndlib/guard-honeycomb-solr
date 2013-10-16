@@ -1,24 +1,41 @@
 # Guard::Jetty
 
-TODO: Write a gem description
+Guard::Jetty automatically starts and reloads your jetty server.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Please make sure to have [Guard][guard] installed before continuing.
 
-    gem 'guard-jetty'
+Add it to your Gemfile
 
-And then execute:
+```ruby
+group :development do
+  gem 'guard-jetty'
+end
+```
 
-    $ bundle
+then install it by running Bundler:
 
-Or install it yourself as:
+```bash
+$ bundle
+```
 
-    $ gem install guard-jetty
+Add the default Guard::Jetty template to your `Guardfile` by running:
+
+```bash
+$ guard init jetty
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Guard::Jetty uses [Jettywrapper][jettywrapper] to start and stop Jetty.  By default it will read your jetty configuration from `config/jetty.yml`, but you can also set options in your Guardfile.  Options set in the Guardfile will override those found in `config/jetty.yml`.
+
+```ruby
+guard 'jetty', jetty_port: 8983 do
+  watch('config/jetty.yml')
+  watch(%r{^jetty/(.+)\.xml$})
+end
+```
 
 ## Contributing
 
