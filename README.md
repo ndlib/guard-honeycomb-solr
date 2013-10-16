@@ -4,7 +4,7 @@ Guard::Jetty automatically starts and reloads your jetty server.
 
 ## Installation
 
-Please make sure to have [Guard][guard] installed before continuing.
+Please make sure to have [Guard](https://github.com/guard/guard) installed before continuing.
 
 Add it to your Gemfile
 
@@ -28,7 +28,9 @@ $ guard init jetty
 
 ## Usage
 
-Guard::Jetty uses [Jettywrapper][jettywrapper] to start and stop Jetty.  By default it will read your jetty configuration from `config/jetty.yml`, but you can also set options in your Guardfile.  Options set in the Guardfile will override those found in `config/jetty.yml`.
+Please read the [Guard usage doc](https://github.com/guard/guard#readme).
+
+Guard::Jetty uses [Jettywrapper](https://github.com/projecthydra/jettywrapper) to start and stop Jetty.  By default it will read your jetty configuration from `config/jetty.yml`, but you can also set options in your Guardfile.  Options set in the Guardfile will override those found in `config/jetty.yml`.
 
 ```ruby
 guard 'jetty', jetty_port: 8983 do
