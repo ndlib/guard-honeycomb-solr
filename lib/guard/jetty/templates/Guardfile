@@ -1,0 +1,3 @@
+guard 'jetty' do
+  watch(%r{^jetty/(.+)\.xml$})
+end

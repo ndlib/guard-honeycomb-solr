@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Guard::Jetty::VERSION
   spec.authors       = ["Jaron Kennel"]
   spec.email         = ["jaronkk@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = "Guard::Jetty automatically starts/restarts your jetty server when needed."
+  spec.summary       = "Guard gem for Jetty"
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,6 +18,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "guard", "~> 1.1"
+  spec.add_dependency "jettywrapper", "~> 1.4"
+
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  spec.add_development_dependency "rspec", ">= 2.14.1"
 end
