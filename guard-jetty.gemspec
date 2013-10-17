@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Guard::Jetty automatically starts/restarts your jetty server when needed."
   spec.summary       = "Guard gem for Jetty"
   spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.license       = "Apache 2.0"
 
   spec.files         = Dir.glob('{lib}/**/*') + %w[LICENSE.txt README.md]
   spec.require_paths = ["lib"]
