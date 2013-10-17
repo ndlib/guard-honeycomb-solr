@@ -19,9 +19,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "guard", "~> 1.1"
   spec.add_dependency "jettywrapper", "~> 1.4"
 
+  spec.add_dependency "guard", "~> 1.8"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "guard-bundler", ">= 1.0"
-  spec.add_development_dependency "guard-rspec", "3.1.0"
+  spec.add_development_dependency "guard-rspec", "~> 3.1"
   spec.add_development_dependency "rake"
 
   spec.add_development_dependency "rspec", ">= 2.14.1"
