@@ -1,6 +1,6 @@
-# Guard::Jetty
+# Guard::HoneycombSolr
 
-Guard::Jetty automatically starts and reloads your jetty server.
+Guard::HoneycombSolr automatically starts and reloads your honeycomb solr server.
 
 ## Installation
 
@@ -10,7 +10,7 @@ Add it to your Gemfile
 
 ```ruby
 group :development do
-  gem 'guard-jetty'
+  gem 'guard-honeycomb_solr'
 end
 ```
 
@@ -20,22 +20,22 @@ then install it by running Bundler:
 $ bundle
 ```
 
-Add the default Guard::Jetty template to your `Guardfile` by running:
+Add the default Guard::HoneycombSolr template to your `Guardfile` by running:
 
 ```bash
-$ guard init jetty
+$ guard init honeycomb_solr
 ```
 
 ## Usage
 
 Please read the [Guard usage doc](https://github.com/guard/guard#readme).
 
-Guard::Jetty uses [Jettywrapper](https://github.com/projecthydra/jettywrapper) to start and stop Jetty.  By default it will read your jetty configuration from `config/jetty.yml`, but you can also set options in your Guardfile.  Options set in the Guardfile will override those found in `config/jetty.yml`.
+Guard::HoneycombSolr uses [HoneycombSolr](https://github.com/ndlib/honeycomb_solr) to start and stop HoneycombSolr.  It will read your solr configuration from `config/solr.yml`..
 
 ```ruby
-guard 'jetty', jetty_port: 8983 do
-  watch('config/jetty.yml')
-  watch(%r{^jetty/(.+)\.xml$})
+guard 'honeycomb_solr' do
+  watch('config/solr.yml')
+  watch(%r{^solr/(.+)\.(xml|json|properties|txt)$})
 end
 ```
 
