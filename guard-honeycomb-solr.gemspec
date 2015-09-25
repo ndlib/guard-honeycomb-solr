@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.glob('{lib}/**/*') + %w[LICENSE.txt README.md]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "guard", "~> 1.8"
+  spec.add_dependency "guard", ">= 1.8"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "guard-bundler", ">= 1.0"
