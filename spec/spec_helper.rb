@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'guard/jetty'
+require 'guard/honeycomb_solr'
 require 'jettywrapper'
 
 RSpec.configure do |config|

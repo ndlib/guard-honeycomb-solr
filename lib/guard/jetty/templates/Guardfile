@@ -1,4 +1,0 @@
-guard 'jetty' do
-  watch('config/jetty.yml')
-  watch(%r{^jetty/(.+)\.xml$})
-end

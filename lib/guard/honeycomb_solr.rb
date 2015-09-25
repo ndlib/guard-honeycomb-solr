@@ -1,24 +1,23 @@
 require 'guard'
 require 'guard/guard'
-require 'jettywrapper'
+require 'honeycomb_solr'
 
 module Guard
-  class Jetty < Guard
-    def jetty_config
-      @jetty_config ||= Jettywrapper.load_config.merge(options)
+  class HoneycombSolr < Guard
+    def server
+      @server ||= ::HoneycombSolr::Server.new
     end
 
-    def start_jetty
-      Jettywrapper.start(jetty_config)
+    def start_honeycomb_solr
+      server.start
     end
 
-    def stop_jetty
-      Jettywrapper.stop(jetty_config)
+    def stop_honeycomb_solr
+      server.stop
     end
 
-    def restart_jetty
-      stop_jetty
-      start_jetty
+    def restart_honeycomb_solr
+      server.restart
     end
 
     # Called once when Guard starts. Please override initialize method to init stuff.
@@ -27,7 +26,7 @@ module Guard
     # @return [Object] the task result
     #
     def start
-      start_jetty
+      start_honeycomb_solr
     end
 
     # Called when `stop|quit|exit|s|q|e + enter` is pressed (when Guard quits).
@@ -36,7 +35,7 @@ module Guard
     # @return [Object] the task result
     #
     def stop
-      stop_jetty
+      stop_honeycomb_solr
     end
 
     # Called when `reload|r|z + enter` is pressed.
@@ -46,7 +45,7 @@ module Guard
     # @return [Object] the task result
     #
     def reload
-      restart_jetty
+      restart_honeycomb_solr
     end
 
     # Default behaviour on file(s) changes that the Guard plugin watches.
@@ -55,7 +54,7 @@ module Guard
     # @return [Object] the task result
     #
     def run_on_changes(paths)
-      restart_jetty
+      restart_honeycomb_solr
     end
   end
 end
